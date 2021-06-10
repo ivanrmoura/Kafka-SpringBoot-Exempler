@@ -1,0 +1,13 @@
+iniciar Zookeeper: .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+iniciar kafka: .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+criar tópico: .\bin\windows\kafka-topics.bat --create --topic usage-detail --bootstrap-server localhost:9092
+
+descrever tópico .\bin\windows\kafka-topics.bat --describe --topic lsdi-events --bootstrap-server localhost:9092
+
+listar tópicos: .\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+publicar mensagem: .\bin\windows\kafka-console-producer.bat --topic lsdi --broker-list localhost:9092   
+
+subscrever: .\bin\windows\kafka-console-consumer.bat --topic lsdi
